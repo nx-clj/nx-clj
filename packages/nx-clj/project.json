@@ -59,6 +59,10 @@
           "codeCoverage": true
         }
       }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs nx-clj {args.ver} {args.tag}",
+      "dependsOn": ["build"]
     }
   },
   "tags": []
