@@ -61,7 +61,7 @@
       }
     },
     "publish": {
-      "command": "node tools/scripts/publish.mjs nx-clj {args.ver} {args.tag}",
+      "command": "node tools/scripts/publish.mjs nx-clj {args.ver}",
       "dependsOn": ["build"]
     }
   },
