@@ -40,5 +40,5 @@
     "appsDir": "packages",
     "libsDir": "packages"
   },
-    "plugins": ["@nx-clj/nx-clj"]
+  "plugins": ["@nx-clj/nx-clj"]
 }
