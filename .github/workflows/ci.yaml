@@ -14,8 +14,9 @@ jobs:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v3
       - uses: actions/setup-node@v3
-        node-version-file: .nvmrc
-        cache: npm
+        with:
+          node-version-file: .nvmrc
+          cache: npm
       - run: npm ci
       - run: npx nx format:check
       - run: npx nx affected -t lint --parallel=3
