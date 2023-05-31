@@ -1,0 +1,5 @@
+How it works:
+
+1. Read deps.edn
+2. Look for dependencies declared with ~:local/root~
+3. Check if they point to a project
