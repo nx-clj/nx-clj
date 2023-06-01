@@ -4,6 +4,34 @@
 
 Nx plugin to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
 
+## Basic Usage
+
+First, make sure you have a Nx Workspace.
+
+Create a new one using the following command:
+
+```shell
+npx create-nx-workspace clj-playground --preset=empty
+```
+
+Now, cd to the workspace root and install the plugin:
+
+```shell
+npm install -D @nx-clj/nx-clj
+```
+
+Initialize the plugin:
+
+```shell
+npx nx g @nx-clj/nx-clj:init
+```
+
+And create a new package:
+
+```shell
+npx nx g @nx-clj/nx-clj:package clojure-package
+```
+
 ## Contributing
 
 ### Understand this workspace
