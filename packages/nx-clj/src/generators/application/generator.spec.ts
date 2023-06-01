@@ -16,7 +16,7 @@ describe('package generator', () => {
   it('should create an application successfully', async () => {
     const options: ApplicationGeneratorSchema = {
       name: 'test',
-      main: "com.example",
+      main: 'com.example',
     };
     await packageGenerator(tree, options);
     const config = readProjectConfiguration(tree, 'test');

@@ -14,7 +14,10 @@ export async function packageGenerator(
   tree: Tree,
   options: ApplicationGeneratorSchema
 ) {
-  const projectRoot = getNewProjectRoot(tree, { ...options, projectType: 'application' });
+  const projectRoot = getNewProjectRoot(tree, {
+    ...options,
+    projectType: 'application',
+  });
 
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,
@@ -28,7 +31,10 @@ export async function packageGenerator(
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
     ...options,
     depsProjDir: path.join(offsetFromRoot(projectRoot), depsProject.root),
-    buildDepsProjDir: path.join(offsetFromRoot(projectRoot), buildDepsProject.root),
+    buildDepsProjDir: path.join(
+      offsetFromRoot(projectRoot),
+      buildDepsProject.root
+    ),
     buildDir: `dist/${projectRoot}`,
   });
 

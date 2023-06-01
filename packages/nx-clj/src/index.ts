@@ -1,1 +1,1 @@
-export {processProjectGraph} from './project-graph'
+export { processProjectGraph } from './project-graph';

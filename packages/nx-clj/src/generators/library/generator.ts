@@ -14,11 +14,14 @@ export async function libraryGenerator(
   tree: Tree,
   options: LibraryGeneratorSchema
 ) {
-  const projectRoot = getNewProjectRoot(tree, { ...options, projectType: 'library' });
+  const projectRoot = getNewProjectRoot(tree, {
+    ...options,
+    projectType: 'library',
+  });
 
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,
-    projectType: "library",
+    projectType: 'library',
     sourceRoot: projectRoot,
     targets: {},
   });

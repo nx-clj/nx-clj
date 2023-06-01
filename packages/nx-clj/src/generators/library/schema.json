@@ -1,23 +1,23 @@
 {
-    "$schema": "http://json-schema.org/schema",
-    "$id": "Package",
-    "title": "",
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string",
-            "description": "",
-            "minLength": 1,
-            "$default": {
-                "$source": "argv",
-                "index": 0
-            },
-            "x-prompt": "What name would you like to use?"
-        },
-        "root": {
-            "type": "string",
-            "description": "Path to the project root"
-        }
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Package",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "minLength": 1,
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
     },
-    "required": ["name"]
+    "root": {
+      "type": "string",
+      "description": "Path to the project root"
+    }
+  },
+  "required": ["name"]
 }
