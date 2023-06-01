@@ -39,5 +39,5 @@ testem.log
 Thumbs.db
 
 # Clojure
-.clj-kondo/.cache
-.lsp/.cache
+**/.clj-kondo/.cache
+**/.lsp/.cache
