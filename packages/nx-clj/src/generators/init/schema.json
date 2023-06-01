@@ -4,9 +4,9 @@
   "title": "",
   "type": "object",
   "properties": {
-    "depsProjectPath": {
+    "depsProjectsPath": {
       "type": "string",
-      "description": ""
+      "description": "Path under which all deps projects will be placed. If not provided, deps projects will be created under the default libraries folder"
     }
   },
   "required": []

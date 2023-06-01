@@ -11,7 +11,7 @@ import { InitGeneratorSchema } from './schema';
 
 describe('init generator', () => {
   let tree: Tree;
-  const options: InitGeneratorSchema = { depsProjectPath: 'packages/proj' };
+  const options: InitGeneratorSchema = {};
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
@@ -20,6 +20,12 @@ describe('init generator', () => {
   it('should generate a deps project', async () => {
     await initGenerator(tree, options);
     const config = readProjectConfiguration(tree, 'clj-deps');
+    expect(config).toBeDefined();
+  });
+
+  it('should generate a build deps project', async () => {
+    await initGenerator(tree, options);
+    const config = readProjectConfiguration(tree, 'clj-build-deps');
     expect(config).toBeDefined();
   });
 

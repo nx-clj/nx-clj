@@ -11,7 +11,8 @@ import { InitGeneratorSchema } from './schema';
 import { getNewProjectRoot } from '../utils/get-new-project-root';
 
 export async function initGenerator(tree: Tree, options: InitGeneratorSchema) {
-  generateDepsProject(tree, options);
+  generateDepsProject(tree, options, 'clj-deps');
+  generateDepsProject(tree, options, 'clj-build-deps');
   addNxCljPlugin(tree);
 
   await formatFiles(tree);
@@ -27,20 +28,27 @@ async function addNxCljPlugin(tree: Tree) {
   updateNxJson(tree, nxJson);
 }
 
-async function generateDepsProject(tree: Tree, options: InitGeneratorSchema) {
+async function generateDepsProject(
+  tree: Tree,
+  options: InitGeneratorSchema,
+  projectName: string
+) {
   const projectRoot = getNewProjectRoot(tree, {
-    name: 'clj-deps',
+    name: projectName,
     projectType: 'library',
-    root: options.depsProjectPath,
+    root:
+      options.depsProjectsPath &&
+      path.join(options.depsProjectsPath, projectName),
   });
-  addProjectConfiguration(tree, 'clj-deps', {
+
+  addProjectConfiguration(tree, projectName, {
     root: projectRoot,
     projectType: 'library',
     targets: {},
   });
   generateFiles(
     tree,
-    path.join(__dirname, 'deps-project-files'),
+    path.join(__dirname, `${projectName}-project-files`),
     projectRoot,
     options
   );

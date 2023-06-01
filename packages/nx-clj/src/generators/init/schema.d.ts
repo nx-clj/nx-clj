@@ -1,3 +1,3 @@
 export interface InitGeneratorSchema {
-  depsProjectPath?: string;
+  depsProjectsPath?: string;
 }
