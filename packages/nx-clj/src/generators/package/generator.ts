@@ -24,10 +24,12 @@ export async function packageGenerator(
   });
 
   const depsProject = readProjectConfiguration(tree, 'clj-deps');
+  const buildDepsProject = readProjectConfiguration(tree, 'clj-build-deps');
 
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
     ...options,
     depsProjDir: path.join(offsetFromRoot(projectRoot), depsProject.root),
+    buildDepsProjDir: path.join(offsetFromRoot(projectRoot), buildDepsProject.root),
   });
 
   await formatFiles(tree);
