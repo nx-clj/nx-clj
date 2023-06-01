@@ -8,6 +8,7 @@ import {
 } from '@nx/devkit';
 import * as path from 'path';
 import { InitGeneratorSchema } from './schema';
+import { getNewProjectRoot } from '../utils/get-new-project-root';
 
 export async function initGenerator(tree: Tree, options: InitGeneratorSchema) {
   generateDepsProject(tree, options)
@@ -27,13 +28,13 @@ async function addNxCljPlugin(tree: Tree) {
 }
 
 async function generateDepsProject(tree: Tree, options: InitGeneratorSchema) {
+  const projectRoot = getNewProjectRoot(tree, { name: "clj-deps", projectType: "library", root: options.depsProjectPath });
   addProjectConfiguration(tree, 'clj-deps', {
-    root: options.depsProjectPath,
+    root: projectRoot,
     projectType: 'library',
-    sourceRoot: options.depsProjectPath,
     targets: {},
   });
-  generateFiles(tree, path.join(__dirname, 'deps-project-files'), options.depsProjectPath, options);
+  generateFiles(tree, path.join(__dirname, 'deps-project-files'), projectRoot, options);
 }
 
 export default initGenerator;
