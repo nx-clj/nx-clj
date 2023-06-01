@@ -1,5 +1,5 @@
 export interface PackageGeneratorSchema {
   name: string;
-  projectType: "library" | "application";
+  projectType: 'library' | 'application';
   root?: string;
 }

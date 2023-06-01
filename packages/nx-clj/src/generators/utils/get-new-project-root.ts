@@ -1,4 +1,4 @@
-import { ProjectType, Tree, getWorkspaceLayout, names } from "@nx/devkit";
+import { ProjectType, Tree, getWorkspaceLayout, names } from '@nx/devkit';
 import * as path from 'path';
 
 export interface ProjectOptions {
@@ -7,18 +7,15 @@ export interface ProjectOptions {
   projectType: ProjectType;
 }
 
-export function getNewProjectRoot(
-  tree: Tree,
-  options: ProjectOptions,
-) {
+export function getNewProjectRoot(tree: Tree, options: ProjectOptions) {
   if (options.root) {
     return options.root;
   }
-  const workspaceLayout = getWorkspaceLayout(tree)
+  const workspaceLayout = getWorkspaceLayout(tree);
   switch (options.projectType) {
-    case "library":
-      return path.join(workspaceLayout.libsDir, names(options.name).fileName)
-    case "application":
-      return path.join(workspaceLayout.appsDir, names(options.name).fileName)
+    case 'library':
+      return path.join(workspaceLayout.libsDir, names(options.name).fileName);
+    case 'application':
+      return path.join(workspaceLayout.appsDir, names(options.name).fileName);
   }
 }

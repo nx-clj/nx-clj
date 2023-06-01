@@ -1,13 +1,13 @@
 {
-    "$schema": "http://json-schema.org/schema",
-    "$id": "Init",
-    "title": "",
-    "type": "object",
-    "properties": {
-        "depsProjectPath": {
-            "type": "string",
-            "description": "",
-        }
-    },
-    "required": []
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Init",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "depsProjectPath": {
+      "type": "string",
+      "description": ""
+    }
+  },
+  "required": []
 }

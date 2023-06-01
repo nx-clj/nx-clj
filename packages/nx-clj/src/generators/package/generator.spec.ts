@@ -14,14 +14,20 @@ describe('package generator', () => {
   });
 
   it('should create a library successfully', async () => {
-    const options: PackageGeneratorSchema = { name: 'test', projectType: 'library' };
+    const options: PackageGeneratorSchema = {
+      name: 'test',
+      projectType: 'library',
+    };
     await packageGenerator(tree, options);
     const config = readProjectConfiguration(tree, 'test');
     expect(config).toBeDefined();
   });
 
   it('should create an application  successfully', async () => {
-    const options: PackageGeneratorSchema = { name: 'test', projectType: 'library' };
+    const options: PackageGeneratorSchema = {
+      name: 'test',
+      projectType: 'library',
+    };
     await packageGenerator(tree, options);
     const config = readProjectConfiguration(tree, 'test');
     expect(config).toBeDefined();
