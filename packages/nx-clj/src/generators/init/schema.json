@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "$id": "Init",
+    "title": "",
+    "type": "object",
+    "properties": {
+        "depsProjectPath": {
+            "type": "string",
+            "description": "",
+            "x-prompt": "What path should we use for the deps project?"
+        }
+    },
+    "required": ["depsProjectPath"]
+}

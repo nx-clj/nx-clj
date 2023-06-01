@@ -42,7 +42,8 @@
       "options": {
         "lintFilePatterns": [
           "packages/nx-clj/**/*.ts",
-          "packages/nx-clj/package.json"
+          "packages/nx-clj/package.json",
+          "packages/nx-clj/generators.json"
         ]
       }
     },
