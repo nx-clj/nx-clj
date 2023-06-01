@@ -35,7 +35,7 @@ export async function packageGenerator(
       offsetFromRoot(projectRoot),
       buildDepsProject.root
     ),
-    buildDir: `dist/${projectRoot}`,
+    buildDir: path.join(offsetFromRoot(projectRoot), `dist/${projectRoot}`),
   });
 
   await formatFiles(tree);
