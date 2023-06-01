@@ -1,8 +1,8 @@
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nx/devkit';
 
-import { packageGenerator } from './generator';
-import { PackageGeneratorSchema } from './schema';
+import { libraryGenerator } from './generator';
+import { LibraryGeneratorSchema } from './schema';
 import initGenerator from '../init/generator';
 
 describe('package generator', () => {
@@ -14,21 +14,10 @@ describe('package generator', () => {
   });
 
   it('should create a library successfully', async () => {
-    const options: PackageGeneratorSchema = {
+    const options: LibraryGeneratorSchema = {
       name: 'test',
-      projectType: 'library',
     };
-    await packageGenerator(tree, options);
-    const config = readProjectConfiguration(tree, 'test');
-    expect(config).toBeDefined();
-  });
-
-  it('should create an application  successfully', async () => {
-    const options: PackageGeneratorSchema = {
-      name: 'test',
-      projectType: 'library',
-    };
-    await packageGenerator(tree, options);
+    await libraryGenerator(tree, options);
     const config = readProjectConfiguration(tree, 'test');
     expect(config).toBeDefined();
   });

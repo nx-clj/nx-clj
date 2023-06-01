@@ -7,18 +7,17 @@ import {
   Tree,
 } from '@nx/devkit';
 import * as path from 'path';
-import { PackageGeneratorSchema } from './schema';
+import { ApplicationGeneratorSchema } from './schema';
 import { getNewProjectRoot } from '../utils/get-new-project-root';
 
 export async function packageGenerator(
   tree: Tree,
-  options: PackageGeneratorSchema
+  options: ApplicationGeneratorSchema
 ) {
-  const projectRoot = getNewProjectRoot(tree, options);
+  const projectRoot = getNewProjectRoot(tree, { ...options, projectType: 'application' });
 
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,
-    projectType: options.projectType,
     sourceRoot: projectRoot,
     targets: {},
   });
@@ -30,6 +29,7 @@ export async function packageGenerator(
     ...options,
     depsProjDir: path.join(offsetFromRoot(projectRoot), depsProject.root),
     buildDepsProjDir: path.join(offsetFromRoot(projectRoot), buildDepsProject.root),
+    buildDir: `dist/${projectRoot}`,
   });
 
   await formatFiles(tree);
