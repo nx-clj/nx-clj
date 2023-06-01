@@ -21,9 +21,8 @@ function invariant(condition, message) {
   }
 }
 
-// Executing publish script: node path/to/publish.mjs {name} --version {version} --tag {tag}
-// Default "tag" to "next" so we won't publish the "latest" tag by accident.
-const [, , name, version, tag = 'next'] = process.argv;
+// Executing publish script: node path/to/publish.mjs {name} --version {version}
+const [, , name, version] = process.argv;
 
 // A simple SemVer validation to validate the version
 const validVersion = /^\d+\.\d+\.\d+(-\w+\.\d+)?/;
@@ -59,5 +58,5 @@ try {
   );
 }
 
-// Execute "npm publish" to publish
-execSync(`npm publish --access public --tag ${tag}`);
+// Execute "npm publish" to publish. For nw we'll always publish as `latest` until lib is stabilized
+execSync(`npm publish --access public --tag latest`);
