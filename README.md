@@ -1,6 +1,6 @@
 # nx-clj
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+![npm](https://img.shields.io/npm/v/@nx-clj/nx-clj?style=flat-square)
 
 Nx plugin to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
 
