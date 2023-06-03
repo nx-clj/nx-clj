@@ -1,6 +1,6 @@
 # nx-clj
 
-![npm](https://img.shields.io/npm/v/@nx-clj/nx-clj?style=flat-square)
+[![npm](https://img.shields.io/npm/v/@nx-clj/nx-clj?style=flat-square)](https://www.npmjs.com/package/@nx-clj/nx-clj)
 
 Nx plugin to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
 
