@@ -1,0 +1,5 @@
+(ns <%= main %>
+  (:gen-class))
+
+(defn -main [& _]
+  (println "Hello!"))
