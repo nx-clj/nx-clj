@@ -14,10 +14,20 @@
       },
       "x-prompt": "What name would you like to use?"
     },
+    "rootNs": {
+      "type": "string",
+      "description": "",
+      "minLength": 1,
+      "$default": {
+        "$source": "argv",
+        "index": 1
+      },
+      "x-prompt": "What's the root namespace of the project?"
+    },
     "root": {
       "type": "string",
       "description": "Path to the project root"
     }
   },
-  "required": ["name"]
+  "required": ["name", "rootNs"]
 }

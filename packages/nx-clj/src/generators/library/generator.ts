@@ -30,6 +30,9 @@ export async function libraryGenerator(
 
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
     ...options,
+    libFilePath: `${options.rootNs
+      .replace(/\./g, '/')
+      .replace(/-/g, '_')}/lib.clj`,
     depsProjDir: path.join(offsetFromRoot(projectRoot), depsProject.root),
   });
 
