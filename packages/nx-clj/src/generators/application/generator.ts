@@ -44,7 +44,7 @@ export async function packageGenerator(
       offsetFromRoot(projectRoot),
       buildDepsProject.root
     ),
-    mainFilePath: `${options.main.replace(/\./g, '/')}.clj`,
+    mainFilePath: `${options.main.replace(/\./g, '/').replace(/-/g, '_')}.clj`,
     buildDir: path.join(offsetFromRoot(projectRoot), `dist/${projectRoot}`),
   });
 
