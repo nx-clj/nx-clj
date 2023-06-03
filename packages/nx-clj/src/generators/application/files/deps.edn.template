@@ -1,3 +1,3 @@
-{:deps {workspace-dependencies {:local/root "<%= depsProjDir %>"}}
- :aliases {:build {:deps {workspace-build-dependencies {:local/root "<%= buildDepsProjDir %>"}}
+{:deps {local.nx-clj.workspace/dependencies {:local/root "<%= depsProjDir %>"}}
+ :aliases {:build {:deps {local.nx-clj.local-workspace/build-dependencies {:local/root "<%= buildDepsProjDir %>"}}
                    :ns-default build}}}
