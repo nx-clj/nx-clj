@@ -20,7 +20,7 @@
       "minLength": 1,
       "$default": {
         "$source": "argv",
-        "index": 0
+        "index": 1
       },
       "x-prompt": "What's the main namespace?"
     },
