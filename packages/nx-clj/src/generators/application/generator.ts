@@ -24,12 +24,12 @@ export async function packageGenerator(
     sourceRoot: projectRoot,
     targets: {
       build: {
-        executor: "nx:run-commands",
+        executor: 'nx:run-commands',
         options: {
           cwd: projectRoot,
-          command: "clj -T:build uber"
+          command: 'clj -T:build uber',
         },
-        outputs: [`{workspaceRoot}/dist/${projectRoot}`]
+        outputs: [`{workspaceRoot}/dist/${projectRoot}`],
       },
     },
   });
