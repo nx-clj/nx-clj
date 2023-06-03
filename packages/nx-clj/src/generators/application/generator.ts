@@ -22,7 +22,16 @@ export async function packageGenerator(
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,
     sourceRoot: projectRoot,
-    targets: {},
+    targets: {
+      build: {
+        executor: "nx:run-commands",
+        options: {
+          cwd: projectRoot,
+          command: "clj -T:build uber"
+        },
+        outputs: [`{workspaceRoot}/dist/${projectRoot}`]
+      },
+    },
   });
 
   const depsProject = readProjectConfiguration(tree, 'clj-deps');
