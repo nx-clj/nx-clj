@@ -1,2 +1,0 @@
-{:deps {my-cool/lib {:local/root "../demo-hello"}
-        another-cool/lib {:mvn/version "123"}}}

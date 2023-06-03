@@ -1,6 +1,21 @@
 {
   "name": "@nx-clj/nx-clj",
   "version": "0.0.1",
+  "author": "Caio Oliveira",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nx-clj/nx-clj.git",
+    "directory": "packages/nx-clj"
+  },
+  "bugs": {
+    "url": "https://github.com/nx-clj/nx-clj/issues"
+  },
+  "keywords": [
+    "Monorepo",
+    "Nx",
+    "Clojure"
+  ],
   "type": "commonjs",
   "generators": "./generators.json"
 }
