@@ -22,7 +22,7 @@ This will create the necessary dependencies projects and install the plugin so i
 
 ## Generators
 
-## Application
+### Application
 
 Usage:
 
@@ -38,7 +38,7 @@ The project is also configured with a target that outputs an uberjar. To build t
 npx nx run my-app:build
 ```
 
-## Library
+### Library
 
 Usage:
 
@@ -46,7 +46,7 @@ Usage:
 npx nx g @nx-clj/nx-clj:library my-lib com.example.lib
 ```
 
-### The dependencies projects
+## The dependencies projects
 
 The init plugin creates two libraries in your workspace, named `clj-deps` and `clj-build-deps`. They are used as a central location for defining and pinning the monorepo dependencies. This is possible because of how tools.deps resolves transitive dependencies.
 
