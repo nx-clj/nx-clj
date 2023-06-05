@@ -1,6 +1,5 @@
 # nx-clj
 
-
 Nx plugins to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
 
 ## Packages

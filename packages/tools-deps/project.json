@@ -1,70 +1,70 @@
 {
-    "name": "tools-deps",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "packages/tools-deps/src",
-    "projectType": "library",
-    "targets": {
-        "build": {
-            "executor": "@nx/js:tsc",
-            "outputs": ["{options.outputPath}"],
-            "options": {
-                "outputPath": "dist/packages/tools-deps",
-                "main": "packages/tools-deps/src/index.ts",
-                "tsConfig": "packages/tools-deps/tsconfig.lib.json",
-                "assets": [
-                    "packages/tools-deps/*.md",
-                    {
-                        "input": "./packages/tools-deps/src",
-                        "glob": "**/!(*.ts)",
-                        "output": "./src"
-                    },
-                    {
-                        "input": "./packages/tools-deps/src",
-                        "glob": "**/*.d.ts",
-                        "output": "./src"
-                    },
-                    {
-                        "input": "./packages/tools-deps",
-                        "glob": "generators.json",
-                        "output": "."
-                    },
-                    {
-                        "input": "./packages/tools-deps",
-                        "glob": "executors.json",
-                        "output": "."
-                    }
-                ]
-            }
-        },
-        "lint": {
-            "executor": "@nx/linter:eslint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": [
-                    "packages/tools-deps/**/*.ts",
-                    "packages/tools-deps/package.json",
-                    "packages/tools-deps/generators.json"
-                ]
-            }
-        },
-        "test": {
-            "executor": "@nx/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-            "options": {
-                "jestConfig": "packages/tools-deps/jest.config.ts",
-                "passWithNoTests": true
-            },
-            "configurations": {
-                "ci": {
-                    "ci": true,
-                    "codeCoverage": true
-                }
-            }
-        },
-        "publish": {
-            "command": "node tools/scripts/publish.mjs tools-deps {args.ver}",
-            "dependsOn": ["build"]
-        }
+  "name": "tools-deps",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/tools-deps/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/tools-deps",
+        "main": "packages/tools-deps/src/index.ts",
+        "tsConfig": "packages/tools-deps/tsconfig.lib.json",
+        "assets": [
+          "packages/tools-deps/*.md",
+          {
+            "input": "./packages/tools-deps/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/tools-deps/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/tools-deps",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/tools-deps",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
     },
-    "tags": []
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/tools-deps/**/*.ts",
+          "packages/tools-deps/package.json",
+          "packages/tools-deps/generators.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/tools-deps/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs tools-deps {args.ver}",
+      "dependsOn": ["build"]
+    }
+  },
+  "tags": []
 }
