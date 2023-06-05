@@ -32,7 +32,7 @@ describe('init generator', () => {
   it('should add the plugin to the workspace config', async () => {
     await initGenerator(tree, options);
     const nxJson = readNxJson(tree);
-    expect(nxJson.plugins).toStrictEqual(['@nx-clj/nx-clj']);
+    expect(nxJson.plugins).toStrictEqual(['@nx-clj/tools-deps']);
   });
 
   it('should add the plugin to the workspace config with other plugins', async () => {
@@ -42,7 +42,7 @@ describe('init generator', () => {
 
     await initGenerator(tree, options);
     const nxJson = readNxJson(tree);
-    expect(nxJson.plugins).toContain('@nx-clj/nx-clj');
+    expect(nxJson.plugins).toContain('@nx-clj/tools-deps');
   });
 
   it('should maintain the previous plugins', async () => {

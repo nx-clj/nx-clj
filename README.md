@@ -2,9 +2,11 @@
 
 [![npm](https://img.shields.io/npm/v/@nx-clj/nx-clj?style=flat-square)](https://www.npmjs.com/package/@nx-clj/nx-clj)
 
-Nx plugin to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
+Nx plugins to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
 
-Check the [package's readme](packages/nx-clj/README.md) for the usage guide.
+## Packages
+
+- [@nx-clj/tools-deps](packages/tools-deps): a Nx plugin for [tools.deps projects](https://github.com/clojure/tools.deps).
 
 ## Contributing
 
