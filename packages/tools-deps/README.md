@@ -1,6 +1,6 @@
-# nx-clj
+# tools-deps
 
-[![npm](https://img.shields.io/npm/v/@nx-clj/nx-clj?style=flat-square)](https://www.npmjs.com/package/@nx-clj/nx-clj)
+[![npm](https://img.shields.io/npm/v/@nx-clj/tools-deps?style=flat-square)](https://www.npmjs.com/package/@nx-clj/tools-deps)
 
 Nx plugin to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
 
@@ -9,13 +9,13 @@ Nx plugin to use [Clojure](clojure.org/) in a [Nx](https://nx.dev/) workspace.
 First [create an Nx Workspace](https://nx.dev/getting-started). After that, cd into the workspace root and install the plugin:
 
 ```shell
-npm install -D @nx-clj/nx-clj
+npm install -D @nx-clj/tools-deps
 ```
 
 Initialize the plugin:
 
 ```shell
-npx nx g @nx-clj/nx-clj:init
+npx nx g @nx-clj/tools-deps:init
 ```
 
 This will create the necessary dependencies projects and install the plugin so it resolves the dependency graph with deps.edn data.
@@ -27,7 +27,7 @@ This will create the necessary dependencies projects and install the plugin so i
 Usage:
 
 ```shell
-npx nx g @nx-clj/nx-clj:application my-app com.example.app
+npx nx g @nx-clj/tools-deps:application my-app com.example.app
 ```
 
 This will create a project named `my-app` with the main namespace being `com.example.app`.
@@ -43,7 +43,7 @@ npx nx run my-app:build
 Usage:
 
 ```shell
-npx nx g @nx-clj/nx-clj:library my-lib com.example.lib
+npx nx g @nx-clj/tools-deps:library my-lib com.example.lib
 ```
 
 ## The dependencies projects

@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-clj/nx-clj": ["packages/nx-clj/src/index.ts"]
+      "@nx-clj/tools-deps": ["packages/tools-deps/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

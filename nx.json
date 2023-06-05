@@ -39,6 +39,5 @@
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
-  },
-  "plugins": ["@nx-clj/nx-clj"]
+  }
 }

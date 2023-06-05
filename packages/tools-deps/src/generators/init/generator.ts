@@ -20,10 +20,10 @@ export async function initGenerator(tree: Tree, options: InitGeneratorSchema) {
 
 async function addNxCljPlugin(tree: Tree) {
   const nxJson = readNxJson(tree);
-  if (nxJson.plugins?.includes('@nx-clj/nx-clj')) {
+  if (nxJson.plugins?.includes('@nx-clj/tools-deps')) {
     return;
   }
-  nxJson.plugins = [...(nxJson.plugins ?? []), '@nx-clj/nx-clj'];
+  nxJson.plugins = [...(nxJson.plugins ?? []), '@nx-clj/tools-deps'];
 
   updateNxJson(tree, nxJson);
 }
