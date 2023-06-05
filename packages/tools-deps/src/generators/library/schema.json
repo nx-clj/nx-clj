@@ -12,9 +12,9 @@
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "What name would you like to use?"
+      "x-prompt": "What would you like to use as the project name?"
     },
-    "rootNs": {
+    "libraryName": {
       "type": "string",
       "description": "",
       "minLength": 1,
@@ -22,12 +22,12 @@
         "$source": "argv",
         "index": 1
       },
-      "x-prompt": "What's the root namespace of the project?"
+      "x-prompt": "What's the name of the library?"
     },
     "root": {
       "type": "string",
       "description": "Path to the project root"
     }
   },
-  "required": ["name", "rootNs"]
+  "required": ["name", "libraryName"]
 }

@@ -16,7 +16,7 @@ describe('package generator', () => {
   it('should create a library successfully', async () => {
     const options: LibraryGeneratorSchema = {
       name: 'test',
-      rootNs: 'test.lib',
+      libraryName: 'test/lib',
     };
     await libraryGenerator(tree, options);
     const config = readProjectConfiguration(tree, 'test');
